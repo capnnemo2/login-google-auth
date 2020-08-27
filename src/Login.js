@@ -1,10 +1,14 @@
 import React from "react";
-import { GoogleLogin } from "react-google-login";
+import { GoogleLogin, GoogleLogout } from "react-google-login";
 
 export default class Login extends React.Component {
   render() {
     const responseGoogle = (response) => {
       console.log(response);
+    };
+
+    const logout = () => {
+      console.log("logged out");
     };
 
     return (
@@ -17,6 +21,11 @@ export default class Login extends React.Component {
                 clientId="80581960464-bvpktqd6ocihkc8hlhe0ngup63vgq5ph.apps.googleusercontent.com"
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
+              />
+
+              <GoogleLogout
+                clientId="80581960464-bvpktqd6ocihkc8hlhe0ngup63vgq5ph.apps.googleusercontent.com"
+                onLogoutSuccess={logout}
               />
             </div>
           </fieldset>

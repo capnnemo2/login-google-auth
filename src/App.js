@@ -8,7 +8,7 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <Switch>
-          <Route path="/" component={Login} />
+          <Route exact path="/" component={Login} />
           <Route path="/home" component={Home} />
         </Switch>
       </div>
